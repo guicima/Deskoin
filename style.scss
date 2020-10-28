@@ -1,0 +1,396 @@
+$white: #fff;
+$primary: #000;
+$secondary: #aaa;
+
+
+$lightViolet: #dcd7e9;
+$blue: #2d2db2;
+$violet: #6664ab;
+$darkViolet: #383963;
+
+$background: linear-gradient(to bottom, #2d2db2, #383963);
+
+@font-face {
+    font-family: "Metropolis";
+    font-weight: 400;
+    src: url("assets/Metropolis-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Metropolis";
+    font-weight: 700;
+    src: url("assets/Metropolis-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Metropolis";
+    font-weight: 300;
+    src: url("assets/Metropolis-Light.otf") format("opentype");
+}
+
+html {
+    font-family: Metropolis, sans-serif;
+    font-size: 13px;
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: center / cover no-repeat url('assets/background-mobile.png'), $background;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+
+    &.get-start {
+        background: $background;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.47rem 1.17rem;
+
+    .logo,
+    .hamburger {
+        height: 1.47rem;
+        z-index: 1;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+        opacity: .5;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: .3s;
+
+
+
+    .nav-item {
+        font-size: 1.3em;
+        color: $white;
+        text-decoration: none;
+        padding: .6rem 1.17rem;
+        margin: .88rem;
+        transition: .3s;
+
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+}
+
+.button {
+    background: none;
+    border: $white solid .1rem;
+    border-radius: .3rem;
+    color: $white;
+    text-decoration: none;
+    padding: .6rem 1.17rem;
+    margin: .88rem;
+    transition: .3s;
+
+    &:hover {
+        border: $secondary .1rem solid;
+        color: $secondary;
+    }
+}
+
+.main-content {
+    transition: .3s;
+}
+
+
+.inactive {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cta {
+    position: absolute;
+    text-align: right;
+    margin-left: 1.17rem;
+    right: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $white;
+    transition: 2s;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        right: -40px;
+        background-color: $white;
+        height: 200px;
+        width: .23rem;
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    .button {
+        position: relative;
+        top: 1.17rem;
+        margin: 0;
+    }
+}
+
+.choose-coin {
+    width: 450px;
+    height: 75vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #fff $violet;
+
+    .coin {
+        transition: .3s;
+        margin: .6rem;
+        border: transparent solid .2rem;
+
+        &.active {
+            border: $lightViolet solid .2rem;
+        }
+
+        &:hover {
+            border: #dcd7e96b solid .2rem;
+
+        }
+    }
+}
+
+.buy-form form {
+    display: flex;
+    flex-flow: column;
+
+    #euro {
+        background: right.6rem center no-repeat url('assets/EUR.png');
+    }
+
+    #bitcoin {
+        background: right.6rem center no-repeat url('assets/BTC.png');
+
+
+    }
+
+    #euro:focus,
+    #bitcoin:focus {
+        background-color: $violet;
+    }
+
+    p {
+        color: #fff;
+    }
+
+    .input {
+        transition: .3s;
+        color: #fff;
+        background: none;
+        border: none;
+        appearance: none;
+        -moz-appearance: textfield;
+        border: transparent solid .2rem;
+        padding: .6rem;
+        opacity: .4;
+        font-family: inherit;
+        font-size: 1.1em;
+        margin: 1.17rem 0;
+
+
+        &:focus {
+            background-color: $violet;
+            border: $lightViolet solid .2rem;
+            border-radius: .4rem;
+        }
+    }
+
+    .payment-method {
+        display: flex;
+        margin-top: .6rem;
+
+        .card {
+            transition: .3s;
+
+            width: 100px;
+            height: 50px;
+            background-color: $violet;
+            border-radius: .4rem;
+            text-align: center;
+            padding: .6rem;
+            margin: .3rem;
+            border: transparent solid .2rem;
+
+            &.active {
+                border: $lightViolet solid .2rem;
+
+            }
+
+
+            img {
+                height: 50%;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+
+
+@media (min-width: 680px) {
+    .header {
+        background: center center / 170% no-repeat url("assets/h-heyerlein-riYdn15o96U-unsplash.jpg"), #0c0921;
+        background-blend-mode: exclusion;
+        background-attachment: fixed;
+
+        &.get-start {
+            background: $blue;
+        }
+
+        &::before {
+            content: '';
+            background-color: #0c0921;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            opacity: 0;
+            transition: 5s;
+            pointer-events: none;
+
+        }
+
+        &.land::before {
+            opacity: 1;
+        }
+
+    }
+
+    .logo {
+        margin: .6rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .navigation.inactive {
+        transition: .5s;
+        opacity: .2;
+        pointer-events: all;
+        left: unset;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: unset;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+
+        .nav-item {
+            font-size: 1.1em;
+            margin: .3rem 0;
+
+            &.button {
+                border: none;
+            }
+
+            &.active {
+                font-size: 1.4em;
+                margin: .88rem 0;
+            }
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: #fff;
+            width: .2rem;
+            height: 30vh;
+            opacity: .9;
+        }
+
+        &::before {
+            top: 1.7rem;
+        }
+
+        &::after {
+            bottom: 1.7rem;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .cta {
+        right: 50%;
+        max-width: 800px;
+
+        &::after {
+            display: none;
+        }
+
+        h2 {
+            font-size: 2.2em;
+        }
+
+        p {
+            font-size: 1.4em;
+        }
+
+
+
+
+        &.fadein {
+            opacity: 0;
+        }
+    }
+}
+
+.button {
+    padding: .6rem 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    border: .2rem solid white;
+
+    &:hover {
+        border: .2rem solid $secondary;
+    }
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+
+    >* {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}

@@ -1,0 +1,387 @@
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 400;
+  src: url("assets/Metropolis-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 700;
+  src: url("assets/Metropolis-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-weight: 300;
+  src: url("assets/Metropolis-Light.otf") format("opentype");
+}
+
+html {
+  font-family: Metropolis, sans-serif;
+  font-size: 13px;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: center/cover no-repeat url("assets/background-mobile.png"), -webkit-gradient(linear, left top, left bottom, from(#2d2db2), to(#383963));
+  background: center/cover no-repeat url("assets/background-mobile.png"), linear-gradient(to bottom, #2d2db2, #383963);
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+
+.header.get-start {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2d2db2), to(#383963));
+  background: linear-gradient(to bottom, #2d2db2, #383963);
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1.47rem 1.17rem;
+}
+
+.navbar .logo,
+.navbar .hamburger {
+  height: 1.47rem;
+  z-index: 1;
+}
+
+.navbar .hamburger:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.navigation .nav-item {
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  padding: .6rem 1.17rem;
+  margin: .88rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.navigation .nav-item:hover {
+  color: #aaa;
+}
+
+.button {
+  background: none;
+  border: #fff solid 0.1rem;
+  border-radius: .3rem;
+  color: #fff;
+  text-decoration: none;
+  padding: .6rem 1.17rem;
+  margin: .88rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.button:hover {
+  border: #aaa 0.1rem solid;
+  color: #aaa;
+}
+
+.main-content {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cta {
+  position: absolute;
+  text-align: right;
+  margin-left: 1.17rem;
+  right: 30%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #fff;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  top: 60%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: -40px;
+  background-color: #fff;
+  height: 200px;
+  width: .23rem;
+}
+
+.cta h2 {
+  text-transform: uppercase;
+}
+
+.cta p {
+  font-weight: 300;
+}
+
+.cta .button {
+  position: relative;
+  top: 1.17rem;
+  margin: 0;
+}
+
+.choose-coin {
+  width: 450px;
+  height: 75vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #fff #6664ab;
+}
+
+.choose-coin .coin {
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin: .6rem;
+  border: transparent solid .2rem;
+}
+
+.choose-coin .coin.active {
+  border: #dcd7e9 solid 0.2rem;
+}
+
+.choose-coin .coin:hover {
+  border: #dcd7e96b solid .2rem;
+}
+
+.buy-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.buy-form form #euro {
+  background: right 0.6rem center no-repeat url("assets/EUR.png");
+}
+
+.buy-form form #bitcoin {
+  background: right 0.6rem center no-repeat url("assets/BTC.png");
+}
+
+.buy-form form #euro:focus,
+.buy-form form #bitcoin:focus {
+  background-color: #6664ab;
+}
+
+.buy-form form p {
+  color: #fff;
+}
+
+.buy-form form .input {
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #fff;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: textfield;
+  border: transparent solid .2rem;
+  padding: .6rem;
+  opacity: .4;
+  font-family: inherit;
+  font-size: 1.1em;
+  margin: 1.17rem 0;
+}
+
+.buy-form form .input:focus {
+  background-color: #6664ab;
+  border: #dcd7e9 solid 0.2rem;
+  border-radius: .4rem;
+}
+
+.buy-form form .payment-method {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: .6rem;
+}
+
+.buy-form form .payment-method .card {
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  background-color: #6664ab;
+  border-radius: .4rem;
+  text-align: center;
+  padding: .6rem;
+  margin: .3rem;
+  border: transparent solid .2rem;
+}
+
+.buy-form form .payment-method .card.active {
+  border: #dcd7e9 solid 0.2rem;
+}
+
+.buy-form form .payment-method .card img {
+  height: 50%;
+}
+
+.buy-form form .payment-method .card p {
+  margin: 0;
+}
+
+@media (min-width: 680px) {
+  .header {
+    background: center center/170% no-repeat url("assets/h-heyerlein-riYdn15o96U-unsplash.jpg"), #0c0921;
+    background-blend-mode: exclusion;
+    background-attachment: fixed;
+  }
+  .header.get-start {
+    background: #2d2db2;
+  }
+  .header::before {
+    content: '';
+    background-color: #0c0921;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    opacity: 0;
+    -webkit-transition: 5s;
+    transition: 5s;
+    pointer-events: none;
+  }
+  .header.land::before {
+    opacity: 1;
+  }
+  .logo {
+    margin: .6rem;
+  }
+  .hamburger {
+    display: none;
+  }
+  .navigation.inactive {
+    -webkit-transition: .5s;
+    transition: .5s;
+    opacity: .2;
+    pointer-events: all;
+    left: unset;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transform: unset;
+            transform: unset;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 200px;
+  }
+  .navigation.inactive .nav-item {
+    font-size: 1.1em;
+    margin: .3rem 0;
+  }
+  .navigation.inactive .nav-item.button {
+    border: none;
+  }
+  .navigation.inactive .nav-item.active {
+    font-size: 1.4em;
+    margin: .88rem 0;
+  }
+  .navigation.inactive::after, .navigation.inactive::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: .2rem;
+    height: 30vh;
+    opacity: .9;
+  }
+  .navigation.inactive::before {
+    top: 1.7rem;
+  }
+  .navigation.inactive::after {
+    bottom: 1.7rem;
+  }
+  .navigation.inactive:hover {
+    opacity: 1;
+  }
+  .cta {
+    right: 50%;
+    max-width: 800px;
+  }
+  .cta::after {
+    display: none;
+  }
+  .cta h2 {
+    font-size: 2.2em;
+  }
+  .cta p {
+    font-size: 1.4em;
+  }
+  .cta.fadein {
+    opacity: 0;
+  }
+}
+
+.button {
+  padding: .6rem 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  border: .2rem solid white;
+}
+
+.button:hover {
+  border: 0.2rem solid #aaa;
+}
+
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-content > * {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+/*# sourceMappingURL=style.css.map */
